@@ -22,9 +22,9 @@ class App extends React.Component{
   }
 
   updateToDoList= () =>{
-    if(this.state.todoList.filter(item=> item.content==this.state.newItem).length>0){
+    if(this.state.todoList.filter(item=> item.content===this.state.newItem).length>0){
       alert("This is already in list!");
-    }else if(this.state.newItem!=""){
+    }else if(this.state.newItem!==""){
       this.setState({
             todoList: [...this.state.todoList, {id: this.state.todoList.length+1, content: this.state.newItem, status: false}],
             newItem: ""
